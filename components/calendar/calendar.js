@@ -46,4 +46,34 @@ export class CreateCalendar {
       mainCalendar.insertAdjacentHTML("beforeend", divWithEmptyCells);
     };
   };
+
+  render() {
+    const mainCalendar = document.querySelector('.calendar');
+    mainCalendar.innerHTML = `
+        <div class="calendar__week">Mon</div>
+        <div class="calendar__week">Tue</div>
+        <div class="calendar__week">Wed</div>
+        <div class="calendar__week">Thu</div>
+        <div class="calendar__week">Fri</div>
+        <div class="calendar__week">Sat</div>
+        <div class="calendar__week">Sun</div>
+      `;
+
+    this.emptyCellsInTheBeginning();
+    
+    const daysInMonth = new Date(this.year, this.month + 1, 0).getDate();
+    
+    let divWithDates = '';
+    for (let day = 1; day <= daysInMonth; day++) {
+      divWithDates += `
+        <div class="calendar__day" data-current-day="${this.year}-${this.month}-${day}">
+          ${day}
+        </div>
+      `;
+    };
+    
+    mainCalendar.insertAdjacentHTML("beforeend", divWithDates);
+    
+    this.emptyCellsInTheEnd();
+  };
 };
