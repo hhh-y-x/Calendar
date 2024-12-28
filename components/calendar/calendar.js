@@ -14,4 +14,20 @@ export class CreateCalendar {
     
     return weekDay - 1;
   };
+  
+  emptyCellsInTheBeginning() {
+    const mainCalendar = document.querySelector('.calendar');
+    const firstDay = new Date(this.year, this.month, 1).getDay();
+    const correctedMonday = this.getMondayFirst(firstDay);
+
+    if (correctedMonday !== 0) {
+      let divWithEmptyCells = '';
+      
+      for (var i = 1; i <= correctedMonday; i++) {
+        divWithEmptyCells += `<div class="calendar__empty-cell"></div>`
+      };
+      
+      mainCalendar.insertAdjacentHTML('beforeend', divWithEmptyCells);
+    };
+  };
 };
