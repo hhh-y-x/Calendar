@@ -76,4 +76,18 @@ export class CreateCalendar {
     
     this.emptyCellsInTheEnd();
   };
+  
+  checkElementClassForCurrentDay(currentYear, currentMonth, currentDate) {
+    const daysList = document.querySelectorAll('.calendar__day');
+  
+    daysList.forEach((element) => {
+      let currentDateAttribute = element.getAttribute('data-current-day');
+
+      if (currentDateAttribute.includes(`${currentYear}-${currentMonth}-${currentDate}`)) {
+        element.classList.add('calendar__day--current');
+      } else {
+        element.classList.remove('calendar__day--current');
+      };
+    });
+  };
 };
