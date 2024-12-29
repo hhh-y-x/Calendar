@@ -15,18 +15,23 @@ export class CreateCalendar {
     return weekDay - 1;
   };
   
-  emptyCellsInTheBeginning() {
+  renderPreviousMonthDays() {
     const mainCalendar = document.querySelector('.calendar');
     const firstDay = new Date(this.year, this.month, 1).getDay();
+    const previousMonth = new Date(this.year,  this.month, 0).getDate();
     const correctedMonday = this.getMondayFirst(firstDay);
 
     if (correctedMonday !== 0) {
       let divWithEmptyCells = '';
       
-      for (var i = 1; i <= correctedMonday; i++) {
-        divWithEmptyCells += `<div class="calendar__empty-cell"></div>`
+      for (let i = correctedMonday; i > 0; i--) {
+        divWithEmptyCells += `
+            <div class="calendar__day calendar__day--inactive">
+              ${previousMonth + 1 - i}
+            </div>
+          `;
       };
-      
+
       mainCalendar.insertAdjacentHTML('beforeend', divWithEmptyCells);
     };
   };
@@ -59,7 +64,7 @@ export class CreateCalendar {
         <div class="calendar__week">Sun</div>
       `;
 
-    this.emptyCellsInTheBeginning();
+    this.renderPreviousMonthDays();
     
     const daysInMonth = new Date(this.year, this.month + 1, 0).getDate();
     
