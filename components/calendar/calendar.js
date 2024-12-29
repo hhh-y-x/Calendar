@@ -90,4 +90,29 @@ export class CreateCalendar {
       };
     });
   };
+  
+  currentCalendar() {
+    const months = [
+      "January", "February", "March", "April", 
+      "May", "June", "July", "August", 
+      "September", "October", "November", "December"
+    ];
+  
+    const headerMonth = document.querySelector('.change__month');
+    const headerYear = document.querySelector('.change__year');
+
+    const now = new Date();
+    let currentDate = now.getDate();
+    let currentMonth = now.getMonth();
+    let currentYear = now.getFullYear();
+    
+    headerMonth.value = months[currentMonth];
+    headerYear.value = currentYear;
+
+    const createCalendar = new CreateCalendar(currentYear, currentMonth);
+    createCalendar.render();
+    createCalendar.checkElementClassForCurrentDay(currentYear, currentMonth, currentDate);
+  
+    this.updateCalendar(months);
+  };
 };
