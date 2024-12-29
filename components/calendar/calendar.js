@@ -55,13 +55,13 @@ export class CreateCalendar {
   render() {
     const mainCalendar = document.querySelector('.calendar');
     mainCalendar.innerHTML = `
-        <div class="calendar__week">Mon</div>
-        <div class="calendar__week">Tue</div>
-        <div class="calendar__week">Wed</div>
-        <div class="calendar__week">Thu</div>
-        <div class="calendar__week">Fri</div>
-        <div class="calendar__week">Sat</div>
-        <div class="calendar__week">Sun</div>
+        <div class="calendar__day calendar__day--inactive week">Mon</div>
+        <div class="calendar__day calendar__day--inactive week">Tue</div>
+        <div class="calendar__day calendar__day--inactive week">Wed</div>
+        <div class="calendar__day calendar__day--inactive week">Thu</div>
+        <div class="calendar__day calendar__day--inactive week">Fri</div>
+        <div class="calendar__day calendar__day--inactive week">Sat</div>
+        <div class="calendar__day calendar__day--inactive week">Sun</div>
       `;
 
     this.renderPreviousMonthDays();
