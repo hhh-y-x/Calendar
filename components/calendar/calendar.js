@@ -83,7 +83,7 @@ export class CreateCalendar {
   };
   
   checkElementClassForCurrentDay(currentYear, currentMonth, currentDate) {
-    const daysList = document.querySelectorAll('.calendar__day');
+    const daysList = document.querySelectorAll('[data-current-day]');
   
     daysList.forEach((element) => {
       let currentDateAttribute = element.getAttribute('data-current-day');
