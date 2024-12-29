@@ -90,6 +90,27 @@ export class CreateCalendar {
       };
     });
   };
+
+  updateCalendar(months) {
+    const headerMonth = document.querySelector('.change__month');
+    const headerYear = document.querySelector('.change__year');
+    const now = new Date();
+    const hoursZero = now.getHours();
+    const minutesZero = now.getMinutes();
+    const secondsZero = now.getSeconds();
+    
+    if (hoursZero === 0 && minutesZero === 0 && secondsZero === 0 && 
+        Number(headerYear.value) === now.getFullYear() && 
+        headerMonth.value === months[now.getMonth()]) {
+      
+        this.currentCalendar();
+    };
+    
+    const nextSecond = new Date(now.getTime() + 1000 - now.getMilliseconds());
+    const timeToNextSecond = nextSecond.getTime() - now.getTime();
+
+    setTimeout(() => this.updateCalendar(months), timeToNextSecond);
+  };
   
   currentCalendar() {
     const months = [
