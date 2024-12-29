@@ -36,19 +36,19 @@ export class CreateCalendar {
     };
   };
   
-  emptyCellsInTheEnd() {
+  renderNextMonthDays() {
     const mainCalendar = document.querySelector('.calendar');
-    const lastDay = new Date(this.year, this.month + 1, 0).getDay();
-    const correctedMonday = this.getMondayFirst(lastDay);
-    
-    if (correctedMonday !== 6) {
-      let divWithEmptyCells = '';
-      
-      for (let i = 6 - correctedMonday; i > 0; i--) {
-        divWithEmptyCells += `<div class="calendar__empty-cell"></div>`;
-      };
+    let calendarDays = document.querySelectorAll('.calendar__day');
 
+    for (let i = 1; calendarDays.length < 49; i++) {
+      let divWithEmptyCells = `
+          <div class="calendar__day calendar__day--inactive">
+            ${i}
+          </div>
+        `;
       mainCalendar.insertAdjacentHTML("beforeend", divWithEmptyCells);
+      
+      calendarDays = document.getElementsByClassName('calendar__day');
     };
   };
 
@@ -79,7 +79,7 @@ export class CreateCalendar {
     
     mainCalendar.insertAdjacentHTML("beforeend", divWithDates);
     
-    this.emptyCellsInTheEnd();
+    this.renderNextMonthDays();
   };
   
   checkElementClassForCurrentDay(currentYear, currentMonth, currentDate) {
