@@ -15,3 +15,8 @@ function checkInputIsCurrent(createCalendar) {
     createCalendar.currentCalendar();
   };
 };
+
+function previousAndNextMonth() {
+  const previousMonthBtn = document.querySelector('.change__previous-month');
+  const nextMonthBtn = document.querySelector('.change__next-month');
+};
