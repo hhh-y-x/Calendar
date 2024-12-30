@@ -55,4 +55,7 @@ function previousAndNextMonth() {
     
     checkInputIsCurrent(createCalendar);
   };
+
+  nextMonthBtn.addEventListener('click', handleNextMonth);
+  previousMonthBtn.addEventListener('click', handlePreviousMonth);
 };
