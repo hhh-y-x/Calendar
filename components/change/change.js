@@ -63,4 +63,16 @@ function previousAndNextMonth() {
 function previousAndNextYear() {
   const previousYearBtn = document.querySelector('.change__previous-year');
   const nextYearBtn = document.querySelector('.change__next-year');
+
+  function handlePreviousYear() {
+    let presentInputYear = Number(headerYear.value) - 1;
+    headerYear.value = presentInputYear;
+    
+    const monthInputPresetIndex = months.indexOf(headerMonth.value);
+    
+    const createCalendar = new CreateCalendar(presentInputYear, monthInputPresetIndex);
+    createCalendar.render();
+    
+    checkInputIsCurrent(createCalendar);
+  };
 };
