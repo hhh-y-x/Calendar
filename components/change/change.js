@@ -9,3 +9,9 @@ const months = [
 const headerMonth = document.querySelector('.change__month');
 const headerYear = document.querySelector('.change__year');
 const now = new Date();
+
+function checkInputIsCurrent(createCalendar) {
+  if (now.getFullYear() === Number(headerYear.value) && now.getMonth() === months.indexOf(headerMonth.value)) {
+    createCalendar.currentCalendar();
+  };
+};
