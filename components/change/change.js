@@ -100,3 +100,19 @@ function previousAndNextYear() {
   previousYearBtn.addEventListener('click', handlePreviousYear);
   nextYearBtn.addEventListener('click', handleNextYear);
 };
+
+function setCalendarFromInput() {
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === 'Go') {
+      event.preventDefault();
+    
+      const inputMonth = document.querySelector('.change__month');
+      const inputYear = document.querySelector('.change__year');
+    
+      const createCalendar = new CreateCalendar(Number(inputYear.value), months.indexOf(inputMonth.value));
+      createCalendar.render();
+      
+      checkInputIsCurrent(createCalendar);
+    };
+  });
+};
