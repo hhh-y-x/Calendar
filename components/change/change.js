@@ -87,4 +87,7 @@ function previousAndNextYear() {
     
     checkInputIsCurrent(createCalendar);
   };
+  
+  previousYearBtn.addEventListener('click', handlePreviousYear);
+  nextYearBtn.addEventListener('click', handleNextYear);
 };
