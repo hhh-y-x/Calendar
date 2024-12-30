@@ -19,4 +19,22 @@ function checkInputIsCurrent(createCalendar) {
 function previousAndNextMonth() {
   const previousMonthBtn = document.querySelector('.change__previous-month');
   const nextMonthBtn = document.querySelector('.change__next-month');
+  
+  function handlePreviousMonth() {
+    let presentInputYear = Number(headerYear.value);
+    let changedMonth = months.indexOf(headerMonth.value) - 1;
+    
+    if (changedMonth < 0) {
+      changedMonth = 11;
+      presentInputYear -= 1;
+    };
+    
+    headerMonth.value = months[changedMonth];
+    headerYear.value = presentInputYear;
+    
+    const createCalendar = new CreateCalendar(presentInputYear, changedMonth);
+    createCalendar.render();
+    
+    checkInputIsCurrent(createCalendar);
+  };
 };
