@@ -16,6 +16,15 @@ function checkInputIsCurrent(createCalendar) {
   };
 };
 
+function returnToCurrentCalendar() {
+  const returnToCurrent = document.querySelector('.return__button');
+
+  returnToCurrent.addEventListener('click', () => {
+    const createCalendar = new CreateCalendar();
+    createCalendar.currentCalendar();
+  });
+};
+
 function previousAndNextMonth() {
   const previousMonthBtn = document.querySelector('.change__previous-month');
   const nextMonthBtn = document.querySelector('.change__next-month');
