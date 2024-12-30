@@ -59,3 +59,8 @@ function previousAndNextMonth() {
   nextMonthBtn.addEventListener('click', handleNextMonth);
   previousMonthBtn.addEventListener('click', handlePreviousMonth);
 };
+
+function previousAndNextYear() {
+  const previousYearBtn = document.querySelector('.change__previous-year');
+  const nextYearBtn = document.querySelector('.change__next-year');
+};
