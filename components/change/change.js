@@ -37,4 +37,22 @@ function previousAndNextMonth() {
     
     checkInputIsCurrent(createCalendar);
   };
+
+  function handleNextMonth() {
+    let presentInputYear = Number(headerYear.value);
+    let changedMonth = months.indexOf(headerMonth.value) + 1;
+    
+    if (changedMonth > 11) {
+      changedMonth = 0;
+      presentInputYear += 1;
+    };
+    
+    headerMonth.value = months[changedMonth];
+    headerYear.value = presentInputYear;
+    
+    const createCalendar = new CreateCalendar(presentInputYear, changedMonth);
+    createCalendar.render();
+    
+    checkInputIsCurrent(createCalendar);
+  };
 };
