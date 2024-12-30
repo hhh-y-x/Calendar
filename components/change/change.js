@@ -16,6 +16,13 @@ function checkInputIsCurrent(createCalendar) {
   };
 };
 
+export function activateAllListeners() {
+  previousAndNextMonth();
+  previousAndNextYear();
+  setCalendarFromInput();
+  returnToCurrentCalendar();
+};
+
 function returnToCurrentCalendar() {
   const returnToCurrent = document.querySelector('.return__button');
 
