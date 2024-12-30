@@ -75,4 +75,16 @@ function previousAndNextYear() {
     
     checkInputIsCurrent(createCalendar);
   };
+
+  function handleNextYear() {
+    let presentInputYear = Number(headerYear.value) + 1;
+    headerYear.value = presentInputYear;
+    
+    const monthInputPresetIndex = months.indexOf(headerMonth.value);
+    
+    const createCalendar = new CreateCalendar(presentInputYear, monthInputPresetIndex);
+    createCalendar.render();
+    
+    checkInputIsCurrent(createCalendar);
+  };
 };
