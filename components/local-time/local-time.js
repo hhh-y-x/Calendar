@@ -30,4 +30,8 @@ export function localtime() {
     function padZero(time) {
         return String(time).padStart(2, '0');
     };
+
+    hoursElement.textContent = `${padZero(adjustTime())}`;
+    minutesElement.textContent = ` : ${padZero(now.getMinutes())} :`;
+    secondsElement.textContent = `${padZero(now.getSeconds())}`;
 };
