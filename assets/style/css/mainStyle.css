@@ -46,4 +46,9 @@ q:before, q:after {
   content: none;
 }
 
+@font-face {
+  font-family: "Fredoka-Regular";
+  src: url(../font/Fredoka-Regular.ttf);
+}
+
 /*# sourceMappingURL=mainStyle.css.map */
