@@ -8,4 +8,8 @@ export function searchMonthList() {
   const headerSearch = document.querySelector('.change__month');
   let headerSearchSuggestion = document.createElement('span');
   headerSearchSuggestion.classList.add('change__month--suggestion');
+
+  function disableSpaceKey(event) {
+    if (event.key === ' ') event.preventDefault();
+  };
 };
