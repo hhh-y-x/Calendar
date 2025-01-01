@@ -87,8 +87,8 @@ export class CreateCalendar {
   
     daysList.forEach((element) => {
       let currentDateAttribute = element.getAttribute('data-current-day');
-
-      if (currentDateAttribute.includes(`${currentYear}-${currentMonth}-${currentDate}`)) {
+      
+      if (currentDateAttribute === `${currentYear}-${currentMonth}-${currentDate}`) {
         element.classList.add('calendar__day--current');
       } else {
         element.classList.remove('calendar__day--current');
