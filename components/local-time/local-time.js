@@ -36,4 +36,9 @@ export function localtime() {
     secondsElement.textContent = `${padZero(now.getSeconds())}`;
 
     localTimeSection.setAttribute('datetime', `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}T${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`);
+
+    const nextSecond = new Date(now.getTime() + 1000 - now.getMilliseconds());
+    const timeToNextSecond = nextSecond.getTime() - now.getTime();
+
+    setTimeout(localtime, timeToNextSecond);
 };
