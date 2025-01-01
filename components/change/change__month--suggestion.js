@@ -20,5 +20,19 @@ export function searchMonthList() {
     .filter(node => node.nodeType === Node.TEXT_NODE)
     .map(node => node.textContent.trim())
     .join('');
+
+    if (searchValue) {
+      const suggestionArrayElement = months.filter((month) => month.startsWith(searchValue.toLocaleLowerCase()));
+      let suggestion; 
+      
+      if (suggestionArrayElement[0]) {
+        suggestion = suggestionArrayElement[0].slice(searchValue.length);
+        
+        headerSearchSuggestion = document.createElement('span');
+        headerSearchSuggestion.classList.add('change__month--suggestion');
+        headerSearchSuggestion.textContent = suggestion;
+        headerSearch.append(headerSearchSuggestion);
+      };
+    };
   };
 };
