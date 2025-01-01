@@ -11,7 +11,9 @@ const headerYear = document.querySelector('.change__year');
 const now = new Date();
 
 function checkInputIsCurrent(createCalendar) {
-  if (now.getFullYear() === Number(headerYear.value) && now.getMonth() === months.indexOf(headerMonth.value)) {
+  const headerMonthUpperFirstLetter = headerMonth.textContent.charAt(0).toLocaleUpperCase() + headerMonth.textContent.slice(1).toLocaleLowerCase();
+  
+  if (now.getFullYear() === Number(headerYear.textContent) && now.getMonth() === months.indexOf(headerMonthUpperFirstLetter)) {
     createCalendar.currentCalendar();
   };
 };
@@ -37,16 +39,17 @@ function previousAndNextMonth() {
   const nextMonthBtn = document.querySelector('.change__next-month');
   
   function handlePreviousMonth() {
-    let presentInputYear = Number(headerYear.value);
-    let changedMonth = months.indexOf(headerMonth.value) - 1;
+    const headerMonthUpperFirstLetter = headerMonth.textContent.charAt(0).toLocaleUpperCase() + headerMonth.textContent.slice(1).toLocaleLowerCase();
+    let presentInputYear = Number(headerYear.textContent);
+    let changedMonth = months.indexOf(headerMonthUpperFirstLetter) - 1;
     
     if (changedMonth < 0) {
       changedMonth = 11;
       presentInputYear -= 1;
     };
     
-    headerMonth.value = months[changedMonth];
-    headerYear.value = presentInputYear;
+    headerMonth.textContent = months[changedMonth];
+    headerYear.textContent = presentInputYear;
     
     const createCalendar = new CreateCalendar(presentInputYear, changedMonth);
     createCalendar.render();
@@ -55,16 +58,17 @@ function previousAndNextMonth() {
   };
 
   function handleNextMonth() {
-    let presentInputYear = Number(headerYear.value);
-    let changedMonth = months.indexOf(headerMonth.value) + 1;
+    const headerMonthUpperFirstLetter = headerMonth.textContent.charAt(0).toLocaleUpperCase() + headerMonth.textContent.slice(1).toLocaleLowerCase();
+    let presentInputYear = Number(headerYear.textContent);
+    let changedMonth = months.indexOf(headerMonthUpperFirstLetter) + 1;
     
     if (changedMonth > 11) {
       changedMonth = 0;
       presentInputYear += 1;
     };
     
-    headerMonth.value = months[changedMonth];
-    headerYear.value = presentInputYear;
+    headerMonth.textContent = months[changedMonth];
+    headerYear.textContent = presentInputYear;
     
     const createCalendar = new CreateCalendar(presentInputYear, changedMonth);
     createCalendar.render();
@@ -81,10 +85,10 @@ function previousAndNextYear() {
   const nextYearBtn = document.querySelector('.change__next-year');
 
   function handlePreviousYear() {
-    let presentInputYear = Number(headerYear.value) - 1;
-    headerYear.value = presentInputYear;
+    let presentInputYear = Number(headerYear.textContent) - 1;
+    headerYear.textContent = presentInputYear;
     
-    const monthInputPresetIndex = months.indexOf(headerMonth.value);
+    const monthInputPresetIndex = months.indexOf(headerMonth.textContent);
     
     const createCalendar = new CreateCalendar(presentInputYear, monthInputPresetIndex);
     createCalendar.render();
@@ -93,10 +97,10 @@ function previousAndNextYear() {
   };
 
   function handleNextYear() {
-    let presentInputYear = Number(headerYear.value) + 1;
-    headerYear.value = presentInputYear;
+    let presentInputYear = Number(headerYear.textContent) + 1;
+    headerYear.textContent = presentInputYear;
     
-    const monthInputPresetIndex = months.indexOf(headerMonth.value);
+    const monthInputPresetIndex = months.indexOf(headerMonth.textContent);
     
     const createCalendar = new CreateCalendar(presentInputYear, monthInputPresetIndex);
     createCalendar.render();
@@ -113,10 +117,10 @@ function setCalendarFromInput() {
     if (event.key === 'Enter' || event.key === 'Go') {
       event.preventDefault();
     
-      const inputMonth = document.querySelector('.change__month');
-      const inputYear = document.querySelector('.change__year');
-    
-      const createCalendar = new CreateCalendar(Number(inputYear.value), months.indexOf(inputMonth.value));
+      const headerMonthUpperFirstLetter = headerMonth.textContent.charAt(0).toLocaleUpperCase() + headerMonth.textContent.slice(1).toLocaleLowerCase();
+      headerMonth.textContent = headerMonthUpperFirstLetter;
+      
+      const createCalendar = new CreateCalendar(Number(headerYear.textContent), months.indexOf(headerMonthUpperFirstLetter));
       createCalendar.render();
       
       checkInputIsCurrent(createCalendar);
