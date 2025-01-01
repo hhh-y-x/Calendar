@@ -26,4 +26,8 @@ export function localtime() {
             return String(hours);
         };
     };
+
+    function padZero(time) {
+        return String(time).padStart(2, '0');
+    };
 };
