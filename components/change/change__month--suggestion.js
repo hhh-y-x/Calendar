@@ -15,6 +15,10 @@ export function searchMonthList() {
 
   function updateSearchSuggestions() {
     headerSearchSuggestion.remove()
-
+    
+    const searchValue = Array.from(headerSearch.childNodes)
+    .filter(node => node.nodeType === Node.TEXT_NODE)
+    .map(node => node.textContent.trim())
+    .join('');
   };
 };
