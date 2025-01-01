@@ -12,4 +12,9 @@ export function searchMonthList() {
   function disableSpaceKey(event) {
     if (event.key === ' ') event.preventDefault();
   };
+
+  function updateSearchSuggestions() {
+    headerSearchSuggestion.remove()
+
+  };
 };
