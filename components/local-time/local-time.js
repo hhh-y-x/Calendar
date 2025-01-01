@@ -34,4 +34,6 @@ export function localtime() {
     hoursElement.textContent = `${padZero(adjustTime())}`;
     minutesElement.textContent = ` : ${padZero(now.getMinutes())} :`;
     secondsElement.textContent = `${padZero(now.getSeconds())}`;
+
+    localTimeSection.setAttribute('datetime', `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}T${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`);
 };
