@@ -35,4 +35,7 @@ export function searchMonthList() {
       };
     };
   };
+  
+  headerSearch.addEventListener('input', updateSearchSuggestions);
+  headerSearch.addEventListener('keydown', disableSpaceKey);
 };
