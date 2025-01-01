@@ -105,8 +105,8 @@ export class CreateCalendar {
     const secondsZero = now.getSeconds();
     
     if (hoursZero === 0 && minutesZero === 0 && secondsZero === 0 && 
-        Number(headerYear.value) === now.getFullYear() && 
-        headerMonth.value === months[now.getMonth()]) {
+        Number(headerYear.textContent) === now.getFullYear() && 
+        headerMonth.textContent === months[now.getMonth()]) {
       
         this.currentCalendar();
     };
@@ -131,9 +131,8 @@ export class CreateCalendar {
     let currentDate = now.getDate();
     let currentMonth = now.getMonth();
     let currentYear = now.getFullYear();
-    
-    headerMonth.value = months[currentMonth];
-    headerYear.value = currentYear;
+    headerMonth.textContent = months[currentMonth];
+    headerYear.textContent = currentYear;
 
     const createCalendar = new CreateCalendar(currentYear, currentMonth);
     createCalendar.render();
