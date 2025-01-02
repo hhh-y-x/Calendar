@@ -50,5 +50,11 @@ q:before, q:after {
   font-family: "Fredoka-Regular";
   src: url(../font/Fredoka-Regular.ttf);
 }
+body {
+  font-family: "Fredoka-Regular", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
 
 /*# sourceMappingURL=mainStyle.css.map */
