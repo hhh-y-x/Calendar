@@ -1,0 +1,9 @@
+.calendar {
+    display: grid;
+    grid-gap: $calendar-gap;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: $calendar-border;
+    border-bottom: $calendar-border;
+    justify-items: center;
+    width: 100%;
+}
