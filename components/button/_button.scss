@@ -45,4 +45,19 @@
             opacity: $button-opacity-secondary-disabled;
         }
     }
+
+    // button alternate 
+    &--alternate {
+        background-color: $button-background-color-alternate;
+        color: $button-color-alternate;
+        border: $button-border-alternate;
+
+        &:hover {
+            border: $button-border-alternate-hover;
+        }
+
+        &:disabled {
+            opacity: $button-opacity-alternate-disabled;
+        }
+    }
 }
