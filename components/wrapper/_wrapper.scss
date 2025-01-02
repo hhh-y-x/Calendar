@@ -1,0 +1,10 @@
+.wrapper {
+    display: grid;
+    grid-template-rows: $wrapper-grid-rows;
+    justify-content: center;
+    align-items: center;
+    border: $wraper-border;
+    width: $wraper-width;
+    border-radius: $wrapper-border-radius;
+    padding: $wrapper-padding;
+}
