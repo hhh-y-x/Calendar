@@ -8,4 +8,8 @@
     border: none;
     border-radius: $button-border-radius;
     transition: $button-transition;
+    
+    &:disabled {
+        cursor: not-allowed;
+    }
 }
