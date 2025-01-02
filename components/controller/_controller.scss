@@ -1,0 +1,6 @@
+.controller  {
+    display: flex;
+    flex-direction: column;
+    gap: $controller-gap;
+    padding: $controller-padding;
+}
