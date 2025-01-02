@@ -6,4 +6,24 @@
     border-bottom: $calendar-border;
     justify-items: center;
     width: 100%;
+
+    &__day {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: $calendar-day-size;
+        height: $calendar-day-size;
+        text-align: center;
+        justify-items: center;
+        color: $calendar-color-primary;
+
+        &--inactive {
+            color: $calendar-color-inactive;
+        }
+
+        &--current {
+            background: $calendar-color-current-bg;
+            color: $calendar-color-current-text;
+        }
+    }
 }
