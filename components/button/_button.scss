@@ -60,4 +60,12 @@
             opacity: $button-opacity-alternate-disabled;
         }
     }
+
+    &--long {
+        width: $button-long-width;
+    }
+
+    &--short {
+        width: $button-short-width;
+    }
 }
