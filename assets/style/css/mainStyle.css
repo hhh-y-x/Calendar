@@ -160,5 +160,31 @@ body {
 .change__month--suggestion {
   color: #90A0B7;
 }
+.calendar {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(7, 1fr);
+  border-top: 1px solid #ACB5BD;
+  border-bottom: 1px solid #ACB5BD;
+  justify-items: center;
+  width: 100%;
+}
+.calendar__day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  justify-items: center;
+  color: #334D6E;
+}
+.calendar__day--inactive {
+  color: #90A0B7;
+}
+.calendar__day--current {
+  background: #4263EB;
+  color: white;
+}
 
 /*# sourceMappingURL=mainStyle.css.map */
