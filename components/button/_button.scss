@@ -32,4 +32,17 @@
             opacity: $button-opacity-primary-disabled;
         }
     }
+
+    // button secondary
+    &--secondary {
+        background-color: $button-background-color-secondary;
+
+        &:hover {
+            background-color: $button-background-color-secondary-hover;
+        }
+
+        &:disabled {
+            opacity: $button-opacity-secondary-disabled;
+        }
+    }
 }
