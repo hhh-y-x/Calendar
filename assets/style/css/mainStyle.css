@@ -187,4 +187,11 @@ body {
   color: white;
 }
 
+.local-time {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: x-large;
+}
+
 /*# sourceMappingURL=mainStyle.css.map */
