@@ -130,4 +130,17 @@ body {
   width: 30px;
 }
 
+.input {
+  display: flex;
+  align-items: flex-end;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #334D6E;
+}
+.input:focus {
+  outline: none;
+}
+
 /*# sourceMappingURL=mainStyle.css.map */
