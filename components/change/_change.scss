@@ -16,4 +16,8 @@
             color: $change-month-suggestion-color;
         }
     }
+  
+    &__year {
+        @extend .change__month
+    }
 }
