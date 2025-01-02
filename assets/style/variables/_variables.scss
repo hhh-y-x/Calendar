@@ -12,3 +12,36 @@ $wrapper-padding: 5px;
 // controller
 $controller-gap: 5px;
 $controller-padding: 5px;
+
+// button
+$button-border-radius: 8px;
+$button-color: #fff;
+$button-height: 30px;
+$button-transition: opacity 200ms ease-in-out, background 200ms ease-in-out;
+
+// button arrow (SVG)
+$button-arrow-height: 80%;
+$button-arrow-width: 80%;
+
+// button primary
+$button-background-color-primary: #4263EB;
+$button-background-color-primary-hover: #2342C0;
+$button-opacity-primary-disabled: 0.5;
+
+// button secondary
+$button-background-color-secondary: #7048E8;
+$button-background-color-secondary-hover: #5028C6;
+$button-opacity-secondary-disabled: 0.5;
+
+// button alternate
+$button-background-color-alternate: #fff;
+$button-color-alternate: #495057;
+$button-border-alternate: #ACB5BD 1px solid;
+$button-border-alternate-hover: #212429 1px solid;
+$button-opacity-alternate-disabled: 0.3;
+
+// button long
+$button-long-width: 100%;
+
+// button short
+$button-short-width: 30px;
