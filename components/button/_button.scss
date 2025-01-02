@@ -1,0 +1,11 @@
+.button {
+    cursor: pointer;
+    font-family: $primary-font;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $button-height;
+    border: none;
+    border-radius: $button-border-radius;
+    transition: $button-transition;
+}
