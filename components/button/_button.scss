@@ -19,4 +19,17 @@
         height: $button-arrow-height;
         width: $button-arrow-width;
     }
+
+    // button primary
+    &--primary {
+        background-color: $button-background-color-primary;
+        
+        &:hover {
+            background-color: $button-background-color-primary-hover;
+        }
+        
+        &:disabled {
+            opacity: $button-opacity-primary-disabled;
+        }
+    }
 }
