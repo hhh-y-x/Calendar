@@ -75,4 +75,59 @@ body {
   padding: 5px;
 }
 
+.button {
+  cursor: pointer;
+  font-family: "Fredoka-Regular", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  transition: opacity 200ms ease-in-out, background 200ms ease-in-out;
+}
+.button:disabled {
+  cursor: not-allowed;
+}
+.button__arrow {
+  fill: #fff;
+  height: 80%;
+  width: 80%;
+}
+.button--primary {
+  background-color: #4263EB;
+}
+.button--primary:hover {
+  background-color: #2342C0;
+}
+.button--primary:disabled {
+  opacity: 0.5;
+}
+.button--secondary {
+  background-color: #7048E8;
+}
+.button--secondary:hover {
+  background-color: #5028C6;
+}
+.button--secondary:disabled {
+  opacity: 0.5;
+}
+.button--alternate {
+  background-color: #fff;
+  color: #495057;
+  border: #ACB5BD 1px solid;
+}
+.button--alternate:hover {
+  border: #212429 1px solid;
+}
+.button--alternate:disabled {
+  opacity: 0.3;
+}
+.button--long {
+  width: 100%;
+}
+.button--short {
+  width: 30px;
+}
+
 /*# sourceMappingURL=mainStyle.css.map */
