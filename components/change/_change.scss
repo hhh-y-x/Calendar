@@ -1,0 +1,8 @@
+.change {
+    display: grid;
+    width: 100%;
+    gap: $change-gap;
+    grid-template-columns: $change-grid-template-columns;
+    justify-content: center;
+    align-items: center;
+}
