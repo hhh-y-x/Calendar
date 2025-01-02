@@ -12,4 +12,11 @@
     &:disabled {
         cursor: not-allowed;
     }
+
+    //svg
+    &__arrow {
+        fill: $button-color;
+        height: $button-arrow-height;
+        width: $button-arrow-width;
+    }
 }
