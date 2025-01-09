@@ -9,9 +9,7 @@ export function searchMonthList() {
   let headerSearchSuggestion = document.createElement('span');
   headerSearchSuggestion.classList.add('change__month--suggestion');
 
-  function disableSpaceKey(event) {
-    if (event.key === ' ') event.preventDefault();
-  };
+  let firstSuggWord;
 
   function updateSearchSuggestions() {
     headerSearchSuggestion.remove()
@@ -26,6 +24,7 @@ export function searchMonthList() {
       let suggestion; 
       
       if (suggestionArrayElement[0]) {
+        firstSuggWord = suggestionArrayElement[0];
         suggestion = suggestionArrayElement[0].slice(searchValue.length);
         
         headerSearchSuggestion = document.createElement('span');
@@ -35,7 +34,19 @@ export function searchMonthList() {
       };
     };
   };
+
+  function applySuggestion(event) {
+    if (headerSearchSuggestion && headerSearchSuggestion.textContent !== '') {
+      if (event.key === 'Tab' || event.key === ' ' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        event.target.blur();
+
+        headerSearchSuggestion.remove();
+        headerSearch.textContent = `${firstSuggWord[0].toUpperCase()}${firstSuggWord.slice(1)}`;
+      };
+    };
+  };
   
   headerSearch.addEventListener('input', updateSearchSuggestions);
-  headerSearch.addEventListener('keydown', disableSpaceKey);
+  headerSearch.addEventListener('keydown', applySuggestion);
 };
